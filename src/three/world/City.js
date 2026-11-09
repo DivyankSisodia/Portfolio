@@ -188,10 +188,13 @@ const signFragment = /* glsl */ `
     if (!gl_FrontFacing) uv.x = 1.0 - uv.x;
     vec3 tex = texture2D(uAtlas, vRect.xy + uv * vRect.zw).rgb;
     float s = vParams.x;
-    // Occasional flicker: a few signs stutter, most hum steadily
-    float t = uTime * (1.5 + s * 2.0) + s * 40.0;
-    float stutter = step(0.86, s) * step(0.93, fract(sin(floor(t * 6.0) * 12.9898 + s) * 43758.5453));
-    float hum = 0.92 + 0.08 * sin(uTime * 50.0 + s * 30.0);
+    // Occasional flicker: a few signs dip now and then, most hum steadily.
+    // About 1.5-2 slots per second (was 9-21), and each dip fades in and out instead of snapping.
+    float t = uTime * (1.4 + s * 0.8) + s * 40.0;
+    float slot = fract(t);
+    float off = step(0.9, fract(sin(floor(t) * 12.9898 + s) * 43758.5453));
+    float stutter = step(0.86, s) * off * smoothstep(0.0, 0.15, slot) * (1.0 - smoothstep(0.85, 1.0, slot));
+    float hum = 0.95 + 0.05 * sin(uTime * 4.0 + s * 30.0);
     float k = uIntensity * vParams.y * hum * (1.0 - 0.85 * stutter);
     gl_FragColor = vec4(tex * k, 1.0);
     #include <fog_fragment>

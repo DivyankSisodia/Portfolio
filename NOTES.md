@@ -8,6 +8,9 @@ Deep link any moment of the story with `?s=<story time>`, e.g. `/?s=2.22`.
 ## Story (scroll-driven, one continuous world)
 Story time `s` comes from scroll: section i (200vh, sticky 100vh panel) maps to s in [i, i+1).
 Pinned text: s in [i, i+0.5]. Last section ends at s = 3.5 (`STORY_END`).
+Pace limit (`scroll.js`): wheel, touch (Lenis `syncTouch`) and Space/PageUp/PageDown/arrow input passes through a token bucket.
+Max `MAX_STORY_PER_SECOND` = 0.35 (about 3 s per chapter) with a `BURST_VH` = 0.25 allowance, so slow scrolling is unchanged.
+Excess input is dropped. Nav links, Home/End and scrollbar dragging are not limited. Dialogs carry `data-lenis-prevent`.
 Camera keys live in `src/three/CameraRig.js` (CatmullRom over pos/target/fov). Wide screens use `filmOffset` so the subject sits right of the text.
 
 | s | Scene |
