@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en" class="is-loading">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Divyank Sisodia | AI Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Divyank Sisodia, full stack software developer building cloud and AI-enabled products: RAG search, ML recommendations and AI-agent workflows with Node.js, React, PostgreSQL, AWS and Azure."
+    />
+    <meta name="theme-color" content="#07050d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Divyank Sisodia | I build software. You explore it." />
+    <meta
+      property="og:description"
+      content="A scroll through a neon city: Parfame, RAG and AI systems, and three years of shipping full stack products."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Loader -->
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__inner">
+        <div class="loader__logo">DIVYANK<span class="blink">_</span></div>
+        <div class="loader__bar"><span id="loader-bar"></span></div>
+        <div class="loader__meta">
+          <span id="loader-label">Booting the district</span>
+          <span id="loader-pct">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D canvas + fallback background -->
+    <canvas id="webgl" aria-hidden="true"></canvas>
+    <div class="fallback-bg" aria-hidden="true"></div>
+    <div class="scrim" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <header class="nav">
+      <a class="nav__logo" href="#arrival" data-scroll-to="arrival" aria-label="Divyank Sisodia, back to start">
+        DIVYANK<span class="blink">_</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav__links">
+          <li><a href="#work" data-scroll-to="work">Work</a></li>
+          <li>
+            <button type="button" class="nav__about" aria-controls="about" aria-expanded="false">About</button>
+          </li>
+          <li><a href="#contact" data-scroll-to="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HUD -->
+    <div class="hud" aria-hidden="true">
+      <p class="hud__caption">
+        <span class="hud__index" id="hud-index">01</span> /
+        <span class="hud__title" id="hud-title">Arrival</span>
+        <span class="hud__desc" id="hud-desc">Push into the neon district</span>
+      </p>
+      <p class="hud__counter"><span id="hud-num">01</span> / 04</p>
+      <div class="hud__rail">
+        <span class="hud__rail-fill" id="hud-bar"></span>
+        <button type="button" class="hud__tick" data-scroll-to="arrival" tabindex="-1"></button>
+        <button type="button" class="hud__tick" data-scroll-to="work" tabindex="-1"></button>
+        <button type="button" class="hud__tick" data-scroll-to="ai" tabindex="-1"></button>
+        <button type="button" class="hud__tick" data-scroll-to="contact" tabindex="-1"></button>
+      </div>
+    </div>
+
+    <main id="main">
+      <!-- 01 / ARRIVAL -->
+      <section
+        class="chapter"
+        id="arrival"
+        data-chapter="0"
+        data-title="Arrival"
+        data-desc="Push into the neon district"
+        aria-labelledby="arrival-title"
+      >
+        <div class="chapter__pin">
+          <div class="chapter__content">
+            <p class="eyebrow" data-reveal>01 / Arrival</p>
+            <h1 id="arrival-title" class="display">
+              <span class="line" data-reveal><span>I build software.</span></span>
+              <span class="line" data-reveal
+                ><span class="accent glitch" data-text="You explore it.">You explore it.</span></span
+              >
+            </h1>
+            <p class="lede" data-reveal>
+              Three years shipping cloud and AI-enabled products: RAG search, ML recommendations and AI-agent
+              workflows with Node.js, React, PostgreSQL, AWS and Azure.
+            </p>
+            <ul class="stats" data-reveal>
+              <li><strong data-count="3">3</strong><span>years shipping</span></li>
+              <li><strong data-count="10000" data-suffix="+">10,000+</strong><span>active users served</span></li>
+              <li><strong data-count="40" data-suffix="%">40%</strong><span>faster React page loads</span></li>
+            </ul>
+            <a class="scroll-cue" href="#work" data-scroll-to="work" data-reveal>
+              Scroll to enter <span class="scroll-cue__arrow" aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 / PARFAME -->
+      <section
+        class="chapter"
+        id="work"
+        data-chapter="1"
+        data-title="Parfame"
+        data-desc="Orbit the bottle, reveal the product"
+        aria-labelledby="parfame-title"
+      >
+        <div class="chapter__pin">
+          <div class="chapter__content">
+            <p class="eyebrow" data-reveal>02 / Featured project</p>
+            <h2 id="parfame-title" class="display display--brand">
+              <span class="line" data-reveal><span>PARFAME</span></span>
+            </h2>
+            <p class="tag" data-reveal>AI perfume price comparison platform</p>
+            <p class="lede" data-reveal>
+              Fragrance search, price comparisons, and history. A "smells-similar" recommender, an LLM shopping
+              agent with guardrails, and a price pipeline that normalizes listings into canonical products.
+            </p>
+            <ul class="metrics" data-reveal>
+              <li>
+                <strong>46.9k</strong>
+                <span>fragrances ranked by a Gradient Boosting pairwise ranker on 37 engineered features</span>
+              </li>
+              <li>
+                <strong>0.40 → 0.64</strong>
+                <span>Recall@10, up from a cosine-similarity baseline</span>
+              </li>
+              <li>
+                <strong>40</strong>
+                <span>retailers and WhatsApp sellers compared side by side, per ml</span>
+              </li>
+              <li>
+                <strong>48</strong>
+                <span>adversarial prompts red-teamed against the MCP shopping agent</span>
+              </li>
+            </ul>
+            <ul class="chips" data-reveal aria-label="Parfame tech stack">
+              <li>Python</li>
+              <li>scikit-learn</li>
+              <li>Node.js</li>
+              <li>React</li>
+              <li>PostgreSQL</li>
+              <li>Redis</li>
+              <li>MCP</li>
+            </ul>
+            <div class="links" data-reveal>
+              <a class="link-arrow" href="https://parfame.in" target="_blank" rel="noopener noreferrer"
+                >View project <span aria-hidden="true">↗</span></a
+              >
+              <a
+                class="link-arrow"
+                href="https://github.com/DivyankSisodia/ParfamHelper"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Source <span aria-hidden="true">↗</span></a
+              >
+              <button type="button" class="link-arrow link-arrow--btn" data-shop-open="price" aria-controls="shop">
+                Try the shop <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+          <p class="shop-hint" aria-hidden="true">
+            <span class="shop-hint__dot"></span><span class="shop-hint__text">Click the bottle or the chart</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- 03 / AI SYSTEMS -->
+      <section
+        class="chapter"
+        id="ai"
+        data-chapter="2"
+        data-title="AI Systems"
+        data-desc="Rise past the project towers"
+        aria-labelledby="ai-title"
+      >
+        <div class="chapter__pin">
+          <div class="chapter__content">
+            <p class="eyebrow" data-reveal>03 / RAG / AI Systems</p>
+            <h2 id="ai-title" class="display">
+              <span class="line" data-reveal><span>From data to</span></span>
+              <span class="line" data-reveal><span>answers.</span></span>
+            </h2>
+            <p class="lede" data-reveal>Search, retrieval, and intelligent workflows, shipped to production.</p>
+            <div class="systems" data-reveal>
+              <details>
+                <summary>RAG Knowledge Search <span class="systems__where">Intech Cloud</span></summary>
+                <p>
+                  Internal search over application data and technical documentation that automates knowledge
+                  retrieval and cuts manual lookup for the engineering team.
+                </p>
+              </details>
+              <details>
+                <summary>Marketplace Recommendations <span class="systems__where">Intech Cloud</span></summary>
+                <p>
+                  A car-marketplace recommendation engine built on user-behavior and vehicle-listing data, served
+                  by a Node.js and PostgreSQL backend with Redis caching for concurrent traffic.
+                </p>
+              </details>
+              <details>
+                <summary>AI Agent Workflows <span class="systems__where">Abstrabit</span></summary>
+                <p>
+                  An AWS EC2 and Lambda email autoresponder (+20% data-processing efficiency), n8n and Supabase
+                  multi-channel orchestration, CRM sync with AI agents (+25% operational efficiency) and AutoGen
+                  conversational flows.
+                </p>
+              </details>
+            </div>
+            <ul class="chips" data-reveal aria-label="AI skills">
+              <li>RAG</li>
+              <li>LLM integration</li>
+              <li>MCP</li>
+              <li>Tool calling</li>
+              <li>Guardrails</li>
+              <li>Vector search</li>
+              <li>AutoGen</li>
+              <li>AI agents</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 / ROOFTOP -->
+      <section
+        class="chapter chapter--last"
+        id="contact"
+        data-chapter="3"
+        data-title="Rooftop"
+        data-desc="Rise above the city, end with contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="chapter__pin">
+          <div class="chapter__content">
+            <p class="eyebrow" data-reveal>04 / Rooftop</p>
+            <h2 id="contact-title" class="display">
+              <span class="line" data-reveal><span>Let's build</span></span>
+              <span class="line" data-reveal><span class="accent">what comes next.</span></span>
+            </h2>
+            <p class="name" data-reveal>Divyank Sisodia</p>
+            <p class="lede" data-reveal>
+              Full stack and AI engineering, from data pipelines to the interface. Based in Faridabad, India.
+            </p>
+            <ul class="contact-links" data-reveal>
+              <li><a class="link-arrow" href="mailto:dhruvsisodia13@gmail.com">Email <span aria-hidden="true">↗</span></a></li>
+              <li>
+                <a class="link-arrow" href="https://github.com/DivyankSisodia" target="_blank" rel="noopener noreferrer"
+                  >GitHub <span aria-hidden="true">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="link-arrow"
+                  href="https://www.linkedin.com/in/divyank-sisodia-b07576230"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LinkedIn <span aria-hidden="true">↗</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="link-arrow"
+                  href="https://leetcode.com/u/Sisodia_Dhruv12"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LeetCode <span aria-hidden="true">↗</span></a
+                >
+              </li>
+            </ul>
+            <ol class="timeline" data-reveal aria-label="Experience">
+              <li>
+                <span class="timeline__when">Dec 2025 – Present</span>
+                <span class="timeline__what">Software Developer · Intech Cloud</span>
+              </li>
+              <li>
+                <span class="timeline__when">Jul 2024 – Dec 2025</span>
+                <span class="timeline__what">Software Development Engineer · Abstrabit Technologies</span>
+              </li>
+              <li>
+                <span class="timeline__when">Aug 2023 – Feb 2024</span>
+                <span class="timeline__what">Associate Software Engineer · MAQ Software</span>
+              </li>
+            </ol>
+          </div>
+          <footer class="footer">
+            <span>© <span id="year">2026</span> Divyank Sisodia</span>
+            <span>Built with Three.js</span>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <!-- About dialog -->
+    <div class="about" id="about" role="dialog" aria-modal="true" aria-labelledby="about-title" hidden>
+      <div class="about__backdrop" data-close></div>
+      <div class="about__panel" tabindex="-1">
+        <button type="button" class="about__close" data-close aria-label="Close about panel">Close <span aria-hidden="true">×</span></button>
+        <p class="eyebrow">About</p>
+        <h2 id="about-title" class="about__title">Divyank Sisodia</h2>
+        <p class="about__role">AI Full Stack Developer · Faridabad, India</p>
+        <p class="about__summary">
+          Full Stack Software Developer with 3 years of experience delivering cloud and AI-enabled products using
+          Node.js, React, PostgreSQL, AWS, and Azure. Shipped RAG search, ML recommendation, and AI-agent workflows;
+          improved data-processing efficiency by 20%, operational efficiency by 25%, and React performance by 40%.
+          Led client-facing delivery by collaborating with 5+ stakeholders, translating business requirements, and
+          communicating weekly progress for releases serving 10,000+ users.
+        </p>
+
+        <h3 class="about__heading">Experience</h3>
+        <article class="role">
+          <header class="role__head">
+            <h4>Intech Cloud Private Limited</h4>
+            <span>Dec 2025 – Present · India (Remote)</span>
+          </header>
+          <p class="role__title">Software Developer</p>
+          <ul>
+            <li>Built a RAG-powered internal search tool over application data and technical documentation, automating knowledge retrieval.</li>
+            <li>Launched a car-marketplace recommendation engine using user-behavior and vehicle-listing data to personalize suggestions.</li>
+            <li>Designed a Node.js and PostgreSQL backend that separates API workloads from persistent data operations under concurrent traffic.</li>
+            <li>Implemented Redis caching to cut redundant database reads, API response time and load on the primary PostgreSQL database.</li>
+          </ul>
+        </article>
+        <article class="role">
+          <header class="role__head">
+            <h4>Abstrabit Technologies</h4>
+            <span>Jul 2024 – Dec 2025 · Bangalore (Remote)</span>
+          </header>
+          <p class="role__title">Software Development Engineer</p>
+          <ul>
+            <li>Built an AWS-based email autoresponder with EC2 and Lambda to automate message processing across large datasets.</li>
+            <li>Processed and analyzed large datasets through the cloud pipeline, improving data-processing efficiency by 20%.</li>
+            <li>Developed a multi-channel orchestration system with n8n and Supabase, coordinating message queues and automated responses.</li>
+            <li>Integrated contact and CRM synchronization with AI agents, improving operational efficiency by 25%.</li>
+            <li>Engineered conversational workflows with AutoGen, NLP and prompt engineering for context-aware customer interactions.</li>
+          </ul>
+        </article>
+        <article class="role">
+          <header class="role__head">
+            <h4>MAQ Software</h4>
+            <span>Aug 2023 – Feb 2024 · Hyderabad, India</span>
+          </header>
+          <p class="role__title">Associate Software Engineer</p>
+          <ul>
+            <li>Led end-to-end React.js feature delivery for a web application serving 10,000+ active users.</li>
+            <li>Collaborated with 5+ clients to turn business needs into actionable delivery plans, presenting weekly progress reviews.</li>
+            <li>Optimized the React front end with JavaScript and CSS, improving page-load speed by 40%.</li>
+            <li>Analyzed user engagement with Azure and Power BI, contributing to a 25% reduction in bounce rate.</li>
+          </ul>
+        </article>
+
+        <h3 class="about__heading">Skills</h3>
+        <dl class="skills">
+          <div><dt>Languages</dt><dd>Python, JavaScript, Java, C++</dd></div>
+          <div><dt>AI / GenAI</dt><dd>RAG, LLM Integration, MCP, Tool Calling, LLM Guardrails, Prompt Engineering, Vector Search, AutoGen, NLP, AI Agents</dd></div>
+          <div><dt>Machine Learning</dt><dd>scikit-learn, Gradient Boosting, Feature Engineering, Recommender Systems, Pandas, NumPy</dd></div>
+          <div><dt>Frontend / Backend</dt><dd>React.js, Node.js, Express.js, CSS, n8n</dd></div>
+          <div><dt>Data</dt><dd>PostgreSQL, MongoDB, MySQL, Redis, Firebase, Supabase, Sequelize</dd></div>
+          <div><dt>Cloud / Analytics</dt><dd>AWS (EC2, Lambda, S3), Azure Databricks, Power BI</dd></div>
+        </dl>
+
+        <h3 class="about__heading">Education</h3>
+        <article class="role">
+          <header class="role__head">
+            <h4>B.Tech in Computer Science, Chitkara University</h4>
+            <span>Oct 2020 – Jun 2024 · Rajpura, Punjab</span>
+          </header>
+          <p class="role__title">GPA 9.1 / 10</p>
+        </article>
+
+        <h3 class="about__heading">Elsewhere</h3>
+        <ul class="about__links">
+          <li><a class="link-arrow" href="mailto:dhruvsisodia13@gmail.com">dhruvsisodia13@gmail.com</a></li>
+          <li><a class="link-arrow" href="https://github.com/DivyankSisodia" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></li>
+          <li><a class="link-arrow" href="https://www.linkedin.com/in/divyank-sisodia-b07576230" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li>
+          <li><a class="link-arrow" href="https://leetcode.com/u/Sisodia_Dhruv12" target="_blank" rel="noopener noreferrer">LeetCode <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Parfame shop dialog: interactive canvas opened from the bottle, the holo chart or the button -->
+    <div class="shop" id="shop" role="dialog" aria-modal="true" aria-labelledby="shop-title" hidden>
+      <div class="shop__backdrop" data-shop-close></div>
+      <div class="shop__panel" tabindex="-1">
+        <header class="shop__head">
+          <div>
+            <p class="eyebrow">Parfame · interactive demo</p>
+            <h2 id="shop-title" class="shop__title">Amber Oud</h2>
+            <p class="shop__meta" id="shop-meta">Woody amber · Eau de parfum</p>
+          </div>
+          <button type="button" class="about__close" data-shop-close aria-label="Close shop">Close <span aria-hidden="true">×</span></button>
+        </header>
+
+        <div class="shop__scents" role="radiogroup" aria-label="Fragrance"></div>
+
+        <div class="shop__tabs" role="tablist" aria-label="Shop views">
+          <button type="button" role="tab" id="shop-tab-price" data-tab="price" aria-controls="shop-view">Price history</button>
+          <button type="button" role="tab" id="shop-tab-compare" data-tab="compare" aria-controls="shop-view">Compare retailers</button>
+          <button type="button" role="tab" id="shop-tab-similar" data-tab="similar" aria-controls="shop-view">Smells similar</button>
+        </div>
+
+        <div class="shop__view" id="shop-view" role="tabpanel">
+          <div class="shop__toolbar">
+            <div class="shop__sizes" role="group" aria-label="Bottle size">
+              <button type="button" data-size="50" aria-pressed="false">50 ml</button>
+              <button type="button" data-size="100" aria-pressed="true">100 ml</button>
+            </div>
+            <p class="shop__readout" id="shop-readout" aria-live="polite"></p>
+          </div>
+          <canvas class="shop__canvas" tabindex="0" aria-describedby="shop-help"></canvas>
+          <p class="shop__help" id="shop-help"></p>
+        </div>
+        <p class="shop__note">Sample data for the demo. The live product is at <a href="https://parfame.in" target="_blank" rel="noopener noreferrer">parfame.in</a>.</p>
+      </div>
+    </div>
+
+    <noscript>
+      <style>
+        .loader { display: none !important; }
+        [data-reveal] { opacity: 1 !important; transform: none !important; }
+      </style>
+    </noscript>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
